@@ -1,0 +1,7 @@
+To execute test cases & generate report files:
+--------------------------------------------------
+ behave -f allure_behave.formatter:AllureFormatter -o reports/ features/<featurename>.feature
+
+To Generate Allure report:
+--------------------------------------------
+ allure serve reports
