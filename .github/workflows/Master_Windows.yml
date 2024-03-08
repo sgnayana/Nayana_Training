@@ -15,10 +15,9 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r INSVQD_Github_Actions_Training/requirements.txt
+          pip install -r requirements.txt
       - name: Execute Behave tests
         run: |
-          cd INSVQD_Github_Actions_Training/Shell_FE_Behave_Tests
           behave .\features\OrgangeHRMLogin.feature
       - name: Upload Test Results
         if: success() || failure()
