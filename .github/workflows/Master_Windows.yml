@@ -1,0 +1,29 @@
+name: Release_Pipeline_Windows
+on:
+  push:
+    branches:
+      - Master
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r INSVQD_Github_Actions_Training/requirements.txt
+      - name: Execute Behave tests
+        run: |
+          cd INSVQD_Github_Actions_Training/Shell_FE_Behave_Tests
+          behave .\features\OrgangeHRMLogin.feature
+      - name: Upload Test Results
+        if: success() || failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: INSVQD_Github_Actions_Training/JunitReports/TESTS-*.xml
+    
