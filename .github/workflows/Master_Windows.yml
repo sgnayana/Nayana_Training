@@ -21,10 +21,4 @@ jobs:
         run: |
           cd features
           behave OrgangeHRMLogin.feature
-      - name: Upload Test Results
-        if: success() || failure()
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-results
-          path: JunitReports/TESTS-*.xml
    
