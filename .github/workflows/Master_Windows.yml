@@ -21,6 +21,9 @@ jobs:
         run: |
           cd features
           behave OrgangeHRMLogin.feature
+      - name: Execute Behave tests
+        run: |
+          pwd 
       - name: Upload Test Results
         if: success() || failure()
         uses: actions/upload-artifact@v3
