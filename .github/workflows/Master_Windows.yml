@@ -1,4 +1,4 @@
-name: Release_Pipeline
+name:Windows_Pipeline
 on:
   push:
     branches:
@@ -29,5 +29,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test-results
-          path: JunitReports/TESTS-*.xml  
+          path: \a\Nayana_Training\Nayana_Training\JunitReports\TESTS-*.xml  
    
