@@ -1,4 +1,4 @@
-name: Release_Pipeline
+name: Release_Pipeline_Windows
 on:
   push:
     branches:
@@ -29,5 +29,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test-results
-          path:JunitReports\TESTS-*.xml  
+          path: JunitReports\TESTS-*.xml  
    
