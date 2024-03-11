@@ -1,4 +1,4 @@
-name: Release_Pipeline_Windows
+name: Release_Pipeline
 on:
   push:
     branches:
