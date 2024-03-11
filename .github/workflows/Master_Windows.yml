@@ -31,4 +31,4 @@ jobs:
           path: JunitReports\TESTS-*.xml
       - name: schedule
         run: |
-            - cron: '*/5 * * * *'
+          -cron: "*/5 * * * *"
