@@ -26,5 +26,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test-results
-          path: Nayana_Training/JunitReports/TESTS-*.xml  
+          path: JunitReports/TESTS-*.xml  
    
