@@ -1,20 +1,19 @@
 name: Release_Pipeline_Ubuntu
-on:
+'on':
   push:
     branches:
       - master
   schedule:
-      - cron: '40 16 * * *'      
+      - cron: '* 6 * * *' 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.11.2
- 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -23,3 +22,13 @@ jobs:
         run: |
           cd features
           behave OrgangeHRMLogin.feature
+      - name: Execute Behave tests
+        run: |
+          pwd 
+      - name: Upload Test Results
+        if: success() || failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: JunitReports\TESTS-*.xml
+      
