@@ -3,6 +3,8 @@ name: Release_Pipeline_Windows
   push:
     branches:
       - master
+  schedule:
+      - cron: '40 16 * * *' 
 jobs:
   build:
     runs-on: windows-latest
@@ -29,6 +31,4 @@ jobs:
         with:
           name: test-results
           path: JunitReports\TESTS-*.xml
-      - name: schedule
-        run: |
-          cron: '*/5 * * * *'
+      
