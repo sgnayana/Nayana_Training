@@ -7,7 +7,7 @@ name: Release_Pipeline_Ubuntu
       - cron: '* 6 * * *' 
 jobs:
   build:
-    runs-on: Ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Setup Python
