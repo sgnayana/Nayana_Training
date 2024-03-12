@@ -1,4 +1,4 @@
-name: Release_Pipeline
+name: Release_Pipeline_Ubuntu
 on:
   push:
     branches:
